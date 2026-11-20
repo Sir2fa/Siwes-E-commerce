@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market-Place</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=shopping_cart_checkout" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="#">Market - <span>place</span></a>
+        </div>
+        <nav class="nav" id="nav">
+            <a href="#home">Home</a>
+            <a href="#items">Items</a>
+            <a href="#categories">Categories</a>
+            <a href="#sell">Sell Items</a>
+            <a href="about">About</a>
+        </nav>
+        <div class="header-actions">
+            <button class="cart-button" id="cartButton">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 16 15" height="15px" width="15px" fill="#1f1f1f"><path d="M4.44,17.56Q4,17.12 4,16.5q0-0.62 0.44-1.06T5.5,15t1.06,0.44T7,16.5T6.56,17.56T5.5,18q-0.62,0-1.06-0.44Zm9,0Q13,17.12 13,16.5q0-0.62 0.44-1.06T14.5,15t1.06,0.44T16,16.5t-0.44,1.06T14.5,18t-1.06-0.44ZM5.27,5.5L7,9.5h6.27l1.71-4H5.27ZM4.63,4H16.5q0.29,0 0.43,0.23t0.03,0.48l-2.32,5.37q-0.18,0.42-0.54,0.67T13.27,11H6.6L5.73,12.5H16V14H5.75q-0.9,0-1.32-0.75t0.01-1.5L5.52,9.88L2.79,3.5H1V2H3.77L4.63,4ZM7,9.5h6.27H7Z"/></svg> <span id="cartCount">0</span>
+            </button>
+            <button class="menu-button" id="menuButton">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 13 15" height="30px" width="30px" fill="#1f1f1f"><path d="M3,14.5V13H17v1.5H3Zm0-3.75V9.25H17v1.5H3ZM3,7V5.5H17V7H3Z"/></svg>
+            </button>
+
+        </div>
+    </header>
+
+    <main>
+        <!------HERO SECTION ---------->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h2>Welcome To Market-Place</h2>
+                <h3>Buy and sell products <span>Near you</span></h3>
+                <p>
+                    Discover products from your local sellers at affordable price
+                </p>
+            </div>
+            <div class="heroBtn">
+                <a href="products" class="primaryBtn">Check Products</a>
+                <a href="sell" class="secondaryBtn">Sell Products</a>
+            </div>
+        </section>
+
+        <!--=============SREARCH SECTION======-->
+        <section class="search-section">
+            <div class="search-box">
+                <input 
+                    type="search"
+                    placeholder="search for products"
+                    id="searchBox"
+                    onkeyup="searchPost()"
+                >
+                <button id="searchButton">Search</button>
+            </div>
+        </section>
+        <section class="categories" id="categories">
+            <div class="section-heading">
+                <p>Shop Categories</p>
+                <h2>Checkout Categories</h2>
+            </div>
+            <div class="category-button">
+                <button class="category-btn active" data-category="all">
+                    All
+                </button>
+
+                <button class="category-btn" data-category="Fashion">
+                    Fashion
+                </button>
+
+                <button class="category-btn" data-category="stationaries">
+                    Stationaies
+                </button>
+
+                <button class="category-btn" data-category="electronics">
+                    Electronics
+                </button>
+
+                <button class="category-btn" data-category="cosmetics">
+                    Cosmetics
+                </button>
+
+                <button class="category-btn" data-category="home">
+                    Home
+                </button>
+            </div>
+        </section>
+
+        <section class="product-section" id="products">
+            <div class="section-heading">
+                <p>Market Place Products</p>
+                <h2>Featured Products</h2>
+            </div>
+
+            <div class="products-grid" id="productGrid">
+                <!--PRODUCT CARD 1-->
+                <div
+                    class="product-card"
+                    data-category="fashion"
+                    data-name="clothes-store"
+                >
+                    <div class="product-image">
+                        <img src="https://media.istockphoto.com/id/164478739/photo/empty-boutique.webp?a=1&b=1&s=612x612&w=0&k=20&c=meRVEu4W79odQ0-IPCEf1IwHSEUMNpJu2oqZfauAbdE=" alt="clothes store">
+                        <button class="favourite-button">
+                            ❤️
+                        </button>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-category">
+                            Fashion
+                        </p>
+                        <h3>Clothes Store</h3>
+                        <p class="product-describtion">
+                            Find your good branded clothes
+                        </p>
+                    </div>
+                    
+                    <div class="product-buttom">
+                        <strong>#50,000</strong>
+
+                        <button
+                            class="add-to-cart"
+                            data-name="clothes"
+                            data-price="50000"
+                        >
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+
+                <!--PRODUCT CARD 2-->
+                <div
+                    class="product-card"
+                    data-category="fashion"
+                    data-name="shoes"
+                >
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1768225286074-9039931bb9d3?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="shoes store">
+                        <button class="favourite-button">
+                            ❤️
+                        </button>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-category">
+                            Fashion
+                        </p>
+                        <h3>Shoes Store</h3>
+                        <p class="product-describtion">
+                            Find good and classic shoes
+                        </p>
+                    </div>
+                    
+                    <div class="product-buttom">
+                        <strong>#40,000</strong>
+
+                        <button
+                            class="add-to-cart"
+                            data-name="shoes"
+                            data-price="40000"
+                        >
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+
+                <!--PRODUCT CARD 3-->
+                <div
+                    class="product-card"
+                    data-category="stationaries"
+                    data-name="book-store"
+                >
+                    <div class="product-image">
+                        <img src="https://media.istockphoto.com/id/2177068635/photo/a-neatly-organized-stationery-aisle-in-a-store-filled-with-notebooks-binders-and-office.webp?a=1&b=1&s=612x612&w=0&k=20&c=osoO5442leR8_U7sOrPYT37F6JzONSnrTF_G3Wx1apA=" alt="book store">
+                        <button class="favourite-button">
+                            ❤️
+                        </button>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-category">
+                            Stationaries
+                        </p>
+                        <h3>Book Store</h3>
+                        <p class="product-describtion">
+                            Checkout book and writing items
+                        </p>
+                    </div>
+                    
+                    <div class="product-buttom">
+                        <strong>#20,000</strong>
+
+                        <button
+                            class="add-to-cart"
+                            data-name="books"
+                            data-price="20000"
+                        >
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!--PRODUCT CARD 4-->
+                <div
+                    class="product-card"
+                    data-category="cosmetics"
+                    data-name="Cream-store"
+                >
+                    <div class="product-image">
+                        <img src="https://media.istockphoto.com/id/1388226392/photo/an-unrecognizable-caucasian-woman-buying-some-cosmetic-products.webp?a=1&b=1&s=612x612&w=0&k=20&c=823KoTB0ylHPixnO66jyDLTlDmVqyCEerDMbReZLAeU=" alt="Cream store">
+                        <button class="favourite-button">
+                            ❤️
+                        </button>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-category">
+                            Cosmetics
+                        </p>
+                        <h3>Cream Store</h3>
+                        <p class="product-describtion">
+                            Your skin routine needs
+                        </p>
+                    </div>
+                    
+                    <div class="product-buttom">
+                        <strong>#18,000</strong>
+
+                        <button
+                            class="add-to-cart"
+                            data-name="Cream"
+                            data-price="18000"
+                        >
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!--PRODUCT CARD 5-->
+                <div
+                    class="product-card"
+                    data-category="cosmetics"
+                    data-name="wig-store"
+                >
+                    <div class="product-image">
+                        <img src="https://media.istockphoto.com/id/1489258513/photo/woman-choosing-natural-wig-at-specialty-boutique.webp?a=1&b=1&s=612x612&w=0&k=20&c=iIlz2MIeVEDMr-2dz68zjazUJ39ay1VHOepDYt75fbw=" alt="Wig store">
+                        <button class="favourite-button">
+                            ❤️
+                        </button>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-category">
+                            Cosmetics
+                        </p>
+                        <h3>Wig Store</h3>
+                        <p class="product-describtion">
+                            Checkout best selling wigs
+                        </p>
+                    </div>
+                    
+                    <div class="product-buttom">
+                        <strong>#400,000</strong>
+
+                        <button
+                            class="add-to-cart"
+                            data-name="wigs"
+                            data-price="400000"
+                        >
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+
+                <!--PRODUCT CARD 6-->
+                <div
+                    class="product-card"
+                    data-category="electronics"
+                    data-name="home-aplliances-store"
+                >
+                    <div class="product-image">
+                        <img src="https://media.istockphoto.com/id/1015343138/photo/assortment-of-a-kitchen-appliances-at-household-store.webp?a=1&b=1&s=612x612&w=0&k=20&c=kzP7DHAOArfAtjugVvNlgsNBrlj-2NLFrJ4Q7CymUyk=" alt="Home Appliances store">
+                        <button class="favourite-button">
+                            ❤️
+                        </button>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-category">
+                            Electronics
+                        </p>
+                        <h3>Home Aplliances</h3>
+                        <p class="product-describtion">
+                            Find your best home appliance
+                        </p>
+                    </div>
+                    
+                    <div class="product-buttom">
+                        <strong>#500,000</strong>
+
+                        <button
+                            class="add-to-cart"
+                            data-name="Home-Aplliances"
+                            data-price="500000"
+                        >
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+
+                 <!--PRODUCT CARD 7-->
+                <div
+                    class="product-card"
+                    data-category="electronics"
+                    data-name="phone-store"
+                >
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1591815421748-5d50ffaf1ace?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="phone-store">
+                        <button class="favourite-button">
+                            ❤️
+                        </button>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-category">
+                            Electronics
+                        </p>
+                        <h3>Phones and Gagets</h3>
+                        <p class="product-describtion">
+                            Smart Phones and Accessories
+                        </p>
+                    </div>
+                    
+                    <div class="product-buttom">
+                        <strong>#1,200,000</strong>
+
+                        <button
+                            class="add-to-cart"
+                            data-name="Phones and Accessories"
+                            data-price="1200000"
+                        >
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+
+                 <!--PRODUCT CARD 8-->
+                <div
+                    class="product-card"
+                    data-category="fashion"
+                    data-name="bags-store"
+                >
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1684407261522-48ad66a060e9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="bags store">
+                        <button class="favourite-button">
+                            ❤️
+                        </button>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-category">
+                            Fashion
+                        </p>
+                        <h3>Bags</h3>
+                        <p class="product-describtion">
+                            Find your best Designers bags
+                        </p>
+                    </div>
+                    
+                    <div class="product-buttom">
+                        <strong>#50,000</strong>
+
+                        <button
+                            class="add-to-cart"
+                            data-name="bags"
+                            data-price="50000"
+                        >
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+
+                 <!--PRODUCT CARD 9-->
+                <div
+                    class="product-card"
+                    data-category="fashion"
+                    data-name="sports-wear-store"
+                >
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1781194541387-2b148ef6869e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Sport Wears store">
+                        <button class="favourite-button">
+                            ❤️
+                        </button>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-category">
+                            Fashion
+                        </p>
+                        <h3>Sports Wear</h3>
+                        <p class="product-describtion">
+                            Buy jerseys and other sport wears
+                        </p>
+                    </div>
+                    
+                    <div class="product-buttom">
+                        <strong>#40,000</strong>
+
+                        <button
+                            class="add-to-cart"
+                            data-name="sport wears"
+                            data-price="40000"
+                        >
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+
+                 <!--PRODUCT CARD 10-->
+                <div
+                    class="product-card"
+                    data-category="fashion"
+                    data-name="jewelries-store"
+                >
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1764860753654-ee65d97be642?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Jewelries store">
+                        <button class="favourite-button">
+                            ❤️
+                        </button>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-category">
+                            Fashion
+                        </p>
+                        <h3>Jewelries</h3>
+                        <p class="product-describtion">
+                            Get classics branded watches and Jewelries
+                        </p>
+                    </div>
+                    
+                    <div class="product-buttom">
+                        <strong>#800,000</strong>
+
+                        <button
+                            class="add-to-cart"
+                            data-name="Jewelries"
+                            data-price="800000"
+                        >
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>      
+        </section>
+
+        <section>
+            <div class="cart-overlay" id="cartOverlay">
+                <div class="cart">
+                    <div class="cart-header">
+                        <h2>Your Cart</h2>
+                        <button id="closeCart">
+                            x
+                        </button>
+                    </div>
+
+                    <div class="cart-item" id="cartItem">
+                        <p class="empty-cart">
+                            Your cart is empty
+                        </p>
+                    </div>
+                    
+                    <div class="cart-footer">
+                        <div class="cart-total">
+                            <span>Total:</span>
+                            <strong id="cartTotal">#0</strong>
+                        </div>
+
+                        <button class="checkout-button" id="checkoutButton">
+                            Checkout
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h2>Marketplace</h2>
+                <p>
+                    Your favourite Super Market place
+                </p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+
+                <a href="#home">Home</a><br>
+                <a href="#items">Items</a><br>
+                <a href="#categories">Categories</a><br>
+                <a href="#sell">Sell Items</a><br>
+                <a href="about">About</a>
+            </div>
+
+            <div>
+                <h3>Contact Us</h3>
+                <p>Email:Chibuezegodwin49@gmail.com</p>
+                <p>Phone: +2349091289893</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>
+                &copy;2026 Marplace. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
