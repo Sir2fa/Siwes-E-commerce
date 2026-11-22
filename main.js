@@ -11,10 +11,10 @@ menuButton.addEventListener("click", function(){
 const searchPost = () =>{
     const searchpost = document.getElementById('searchBox').value.toUpperCase();
     const posts = document.querySelectorAll('.product-card');
-    const postTile = document.getElementsByTagName('h3');
+    const postTile = document.querySelectorAll('.product-category');
 
     for(let p = 0; p < postTile.length; p++){
-        let get = posts[p].getElementsByTagName('h3')[0];
+        let get = posts[p].querySelectorAll('.product-category')[0];
  
         if(get){
             let text = get.textContent || get.innerHTML;
