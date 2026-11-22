@@ -93,7 +93,7 @@ function updateCart(){
             </p>
         `;
         cartCount.textContent = "0";
-        cartTotal.textContent = "#0";
+        cartTotal.textContent = "<s>N</s>0";
 
         return;
     }
@@ -112,7 +112,7 @@ function updateCart(){
             <div class="cart-item-info">
                 <h3>${item.name}</h3>
                 <p>
-                    #${item.price.toLocaleString()} 
+                    <s>N</s>${item.price.toLocaleString()} 
                 </p> 
             </div>
 
